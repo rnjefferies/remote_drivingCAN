@@ -1,0 +1,28 @@
+@startuml
+scale 600 width
+
+[*] -> Startup
+Startup -d-> Initialized : INITIALIZED
+Startup: init_monitoring_objects()
+
+Initialized -d-> Open: OPEN
+Initialized --> Warn: WARN
+Initialized: wait_for_operator()
+Initialized: wait_for_trajectory()
+
+Open -> Warn: WARN
+Open -down-> Closed: CLOSE
+Open --> Startup: RESET
+Open: check_monitoring_objects()
+Open: update_trajectory()
+
+Warn -> Open: OPEN
+Warn --> Closed: CLOSE
+Warn --> Startup: RESET
+Warn: check_monitoring_objects()
+Warn: update_trajectory()
+
+Closed --> Startup: RESET
+Closed: check_monitoring_objects()
+
+@enduml

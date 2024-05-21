@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="vehicleID" value="pix"/>
+    <include file="$(find tod_launch)/launch/operator.launch">
+        <arg name="vehicleID" value="$(arg vehicleID)"/>
+    </include>
+    <include file="$(find tod_launch)/launch/vehicle.launch">
+        <arg name="vehicleID" value="$(arg vehicleID)"/>
+    </include>
+</launch>

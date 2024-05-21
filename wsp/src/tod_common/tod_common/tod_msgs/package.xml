@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>tod_msgs</name>
+    <version>1.0.0</version>
+    <description>The tod_msgs package</description>
+
+    <maintainer email="johannes.feiler@tum.de">Johannes Feiler</maintainer>
+    <maintainer email="simon.hoffmann@tum.de">Simon Hoffmann</maintainer>
+    <maintainer email="domagoj.majstorovic@tum.de">Domagoj Majstorovic</maintainer>
+    <maintainer email="andreas.schimpe@tum.de">Andreas Schimpe</maintainer>
+
+    <license>LGPLv3</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <build_depend>std_msgs</build_depend>
+    <build_depend>geometry_msgs</build_depend>
+    <build_depend>message_generation</build_depend>
+    <build_depend>sensor_msgs</build_depend>
+
+    <build_export_depend>std_msgs</build_export_depend>
+    <build_export_depend>geometry_msgs</build_export_depend>
+    <build_export_depend>message_generation</build_export_depend>
+    <build_export_depend>sensor_msgs</build_export_depend>
+
+    <exec_depend>message_runtime</exec_depend>
+
+    <export>
+    </export>
+</package>

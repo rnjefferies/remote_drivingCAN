@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="launchVideo"/>
+    <arg name="launchLidar"/>
+
+    <include file="$(find tod_video)/launch/tod_video_vehicle.launch" if="$(eval launchVideo)">
+        <arg name="adaptVideoParamsEnabled" default="true"/>
+    </include>
+
+    <include file="$(find tod_lidar)/launch/tod_lidar_vehicle.launch" if="$(eval launchLidar)"/>
+
+</launch>

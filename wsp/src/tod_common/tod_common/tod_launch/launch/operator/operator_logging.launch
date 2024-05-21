@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+    <!--  LOGGING  -->
+    <node pkg="rosbag" type="record" name="rosbag_record_operator"
+    args="-o /home/$(env USER)/Documents/ToD_Logs/operator
+
+    /Operator/DirectControl/primary_control_cmd
+    /Operator/CommandCreation/secondary_control_cmd
+
+    /Operator/InputDevices/joystick
+
+    /Operator/Manager/status_msg
+
+    /Operator/VehicleBridge/odometry
+    /Operator/VehicleBridge/vehicle_data
+    /Operator/VehicleBridge/gps/fix
+
+
+    /Operator/Video/CameraFrontCenter/video_info
+    /Operator/Video/CameraFrontLeft/video_info
+    /Operator/Video/CameraFrontRight/video_info
+    /Operator/Video/CameraRearCenter/video_info
+    /Operator/Video/CameraTopViewFront/video_info
+    /Operator/Video/CameraTopViewLeft/video_info
+    /Operator/Video/CameraTopViewRear/video_info
+    /Operator/Video/CameraTopViewRight/video_info
+
+    /Operator/Video/totalBitrateOnGps
+    /Operator/Video/bitrate_desired_on_gps
+    /Operator/Video/bitrate_prediction_on_gps"/>
+</launch>

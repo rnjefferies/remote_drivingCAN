@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+<arg name="map"/>
+
+<!-- Define point instead of comma as decimal seperator -->
+<env name="LC_NUMERIC" value="en_US.UTF-8"/>
+<group if="$(eval arg('map') == 'airfieldFTR')">
+    <param name="lanelet_map_filename" value="/home/$(env USER)/Documents/lanelet_maps/airpark_lanelet2_fixed.osm" />
+    <param name="map_center_lat" value="49.85237868897 "/>
+    <param name="map_center_lon" value="8.578223060170"/>
+    <param name="map_center_alt" value="149.355"/>
+</group>
+
+<group if="$(eval arg('map') == 'aldenhoven')">
+    <param name="lanelet_map_filename" value="/home/$(env USER)/Documents/lanelet_maps/Aldenhoven2_lanelet2.osm" />
+    <param name="map_center_lat" value="50.9070882"/>
+    <param name="map_center_lon" value="6.2260898"/>
+    <param name="map_center_alt" value="164.65385016"/>
+</group>
+
+</launch>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="isVehicle" default="true"/>
+    <arg name="isOperator" default="true"/>
+
+    <group ns="Operator/Transform" if="$(eval isOperator)">
+        <node pkg="tod_transform" type="CommonOdomTransformPublisher" name="CommonOdomTransformPublisher">
+            <remap from="odometry" to="/Operator/VehicleBridge/odometry"/>
+        </node>
+
+        <node name="CommonTransformTreePublisher" pkg="tod_transform" type="CommonTransformTreePublisher"
+              output="screen"/>
+    </group>
+
+    <group ns="Vehicle/Transform" if="$(eval isVehicle)">
+        <node pkg="tod_transform" type="CommonOdomTransformPublisher" name="CommonOdomTransformPublisher">
+            <remap from="odometry" to="/Vehicle/VehicleBridge/odometry"/>
+        </node>
+
+        <node name="CommonTransformTreePublisher" pkg="tod_transform" type="CommonTransformTreePublisher"
+              output="screen"/>
+    </group>
+</launch>

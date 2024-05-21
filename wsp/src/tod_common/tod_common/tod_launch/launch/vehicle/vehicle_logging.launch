@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+<!--  LOGGING  -->
+<node pkg="rosbag" type="record" name="rosbag_record_vehicle"
+    args="-o /home/$(env USER)/Documents/ToD_Logs/vehicle
+
+    /Vehicle/VehicleBridge/primary_control_cmd
+    /Vehicle/CommandCreation/secondary_control_cmd
+
+    /Vehicle/Manager/status_msg
+
+    /Vehicle/VehicleBridge/gps/fix
+    /Vehicle/VehicleBridge/gps/gga
+    /Vehicle/VehicleBridge/gps/nav_status
+    /Vehicle/VehicleBridge/gps/pos_type
+    /Vehicle/VehicleBridge/gps/time_ref
+    /Vehicle/VehicleBridge/gps/vel
+    /Vehicle/VehicleBridge/imu/data
+    /Vehicle/VehicleBridge/odometry
+
+    /Vehicle/VehicleBridge/safety_driver_status
+    /Vehicle/VehicleBridge/vehicle_data
+    /Vehicle/VehicleBridge/vehicle_twist
+
+    /Vehicle/Video/bitrate_prediction_on_gps"/>
+
+</launch>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+<arg name="mode" default="playbackAll"/>
+<arg name="vehicleID" default="$(arg vehicleID)"/>
+
+<group ns="Vehicle">
+
+    <node pkg="rosbag" type="play" name="player"
+        args="-l -r 1.0
+        /home/$(env USER)/Documents/ToD_Playback/$(arg vehicleID).bag"
+        if="$(eval mode=='playbackAll')"/>
+
+    <!-- remaps as these topics are published by q7 test node-->
+    <node pkg="rosbag" type="play" name="player"
+        args="-l -r 1.0
+        /home/$(env USER)/Documents/ToD_Playback/$(arg vehicleID).bag
+        /Vehicle/VehicleBridge/vehicle_data:=none1
+        /Vehicle/VehicleBridge/odometry:=none2"
+        if="$(eval mode=='playbackSim')"/>
+
+</group>
+
+</launch>

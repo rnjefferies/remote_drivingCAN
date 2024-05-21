@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="launchMultiplot"/>
+    <arg name="launchLogging"/>
+
+    <include file="$(find tod_transform)/launch/tod_transform.launch">
+        <arg name="isVehicle" value="false"/>
+        <arg name="isOperator" value="true"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/operator/operator_logging.launch"
+        if="$(eval launchLogging)"/>
+
+    <include file="$(find tod_launch)/launch/operator/multiplot.launch"
+        if="$(eval launchMultiplot)"/>
+</launch>

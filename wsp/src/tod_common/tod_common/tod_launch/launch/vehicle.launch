@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="vehicleID" default="pix"/> <!-- rc-car -->
+    <arg name="mode" default="vehicle"/> <!-- vehicle, playbackAll, playbackSim, onlySim -->
+
+    <param name="/vehicleID" type="string" value="$(arg vehicleID)" />
+    <!-- Vehicle Interface -->
+    <arg name="launchVehicleBridge" default="true"/>
+
+    <!-- Control -->
+    <arg name="launchDirectControl" default="true"/>
+    <arg name="launchSafeCorridorControl" default="true"/>
+    <arg name="launchSharedControl" default="true"/>
+
+    <!-- Perception -->
+    <arg name="launchVideo" default="true"/>
+    <arg name="launchLidar" default="true"/>
+
+    <!-- Common -->
+    <arg name="launchLogging" default="false"/>
+
+    <include file="$(find tod_launch)/launch/vehicle/vehicle_vehicle_interface.launch">
+        <arg name="launchVehicleBridge" value="$(arg launchVehicleBridge)"/>
+        <arg name="vehicleID" value="$(arg vehicleID)"/><!-- for starting correct bridge --> 
+        <arg name="mode" value="$(arg mode)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/vehicle/vehicle_operator_interface.launch"/>
+
+    <include file="$(find tod_launch)/launch/vehicle/vehicle_perception.launch">
+        <arg name="launchVideo" value="$(arg launchVideo)"/>
+        <arg name="launchLidar" value="$(arg launchLidar)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/vehicle/vehicle_control.launch">
+        <arg name="launchDirectControl" value="$(arg launchDirectControl)"/>
+        <arg name="launchSafeCorridorControl" value="$(arg launchSafeCorridorControl)"/>
+        <arg name="launchSharedControl" value="$(arg launchSharedControl)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/vehicle/vehicle_common.launch">
+        <arg name="vehicleID" value="$(arg vehicleID)"/><!-- for playback and transforms --> 
+        <arg name="mode" value="$(arg mode)"/>
+        <arg name="launchLogging" value="$(arg launchLogging)"/>
+    </include>
+</launch>

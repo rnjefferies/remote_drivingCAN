@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+<!--  Enables Playback of ToD Operator Logs                         -->
+<!--  USAGE:                                                        -->
+<!--    Terminal 1: roslaunch tod_launch multiplot_operator.launch  -->
+<!--    Terminal 2: rosbag play /path/to/operator_[...].bag         -->
+    <node name="rqt_multiplot_kpi_monitor" pkg="rqt_multiplot" type="rqt_multiplot"
+        args="--multiplot-config $(find tod_launch)/xml/operator_rqt_multiplot.xml --multiplot-run-all"/>
+</launch>

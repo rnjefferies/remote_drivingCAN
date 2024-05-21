@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="vehicleID" default="pix"/>  <!-- lgsvl, rc-car -->
+    
+    <param name="/vehicleID" type="string" value="$(arg vehicleID)" />
+    
+    <!-- Vehicle Interface -->
+    <arg name="launchVehicleBridge" default="true"/>
+
+    <!-- Operator Interface -->
+    <arg name="launchVisual" default="true"/>
+    <arg name="launchInputDevices" default="true"/>
+
+    <!-- Perception -->
+    <arg name="launchVideo" default="true"/>
+    <arg name="launchLidar" default="true"/>
+    <arg name="launchProjection" default="true"/>
+
+    <!-- Control -->
+    <arg name="launchDirectControl" default="true"/>
+    <arg name="launchSafeCorridorControl" default="true"/>
+    <arg name="launchSharedControl" default="true"/>
+
+    <!-- Common -->
+    <arg name="launchMultiplot" default="false"/>
+    <arg name="launchLogging" default="false"/>
+
+    <include file="$(find tod_launch)/launch/operator/operator_vehicle_interface.launch">
+        <arg name="launchVehicleBridge" value="$(arg launchVehicleBridge)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/operator/operator_operator_interface.launch">
+        <arg name="launchVisual" value="$(arg launchVisual)"/>
+        <arg name="launchInputDevices" value="$(arg launchInputDevices)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/operator/operator_perception.launch">
+        <arg name="launchVideo" value="$(arg launchVideo)"/>
+        <arg name="launchLidar" value="$(arg launchLidar)"/>
+        <arg name="launchProjection" value="$(arg launchProjection)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/operator/operator_control.launch">
+        <arg name="launchSafeCorridorControl" value="$(arg launchSafeCorridorControl)"/>
+        <arg name="launchSharedControl" value="$(arg launchSharedControl)"/>
+    </include>
+
+    <include file="$(find tod_launch)/launch/operator/operator_common.launch">
+        <arg name="launchMultiplot" value="$(arg launchMultiplot)"/>
+        <arg name="launchLogging" value="$(arg launchLogging)"/>
+    </include>
+</launch>

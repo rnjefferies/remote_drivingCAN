@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="launchSafeCorridorControl"/>
+    <arg name="launchSharedControl"/>
+
+    <include file="$(find tod_command_creation)/launch/tod_command_creation.launch">
+        <arg name="isVehicle" value="false"/>
+        <arg name="isOperator" value="true"/>
+    </include>
+
+
+    <include file="$(find tod_safe_corridor)/launch/tod_safe_corridor.launch"
+        if="$(eval launchSafeCorridorControl)">
+        <arg name="isVehicle" value="false"/>
+        <arg name="isOperator" value="true"/>
+    </include>
+
+    <include file="$(find tod_shared_control)/launch/tod_shared_control.launch"
+        if="$(eval launchSharedControl)">
+        <arg name="isVehicle" value="false"/>
+        <arg name="isOperator" value="true"/>
+    </include>
+</launch>
