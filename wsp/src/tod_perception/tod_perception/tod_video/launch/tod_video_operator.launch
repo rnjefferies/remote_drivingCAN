@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="adaptVideoParamsEnabled" default="false"/>
+<arg name="imageOutputFormat" default="rgb8"/> <!--i420, rgb8, yuv422, bgr8, bgra8, mono8-->
+
+
+<group ns="/Operator/Video">
+<node name="RtspClients" type="OperatorRtspClients" pkg="tod_video" output="screen">
+    <param name="imageOutputFormat" value="$(arg imageOutputFormat)"/>
+</node> 
+
+<node name="SceneManager" type="OperatorSceneManager" pkg="tod_video" output="screen">
+    <param name="adaptVideoParamsEnabled" value="$(arg adaptVideoParamsEnabled)"/>
+</node>
+
+<node name="BitrateIntegrator" type="OperatorBitrateIntegrator" pkg="tod_video" output="screen"/>
+
+<node name="VideoConfigSend" type="OperatorVideoConfigSend" pkg="tod_video" output="screen"
+    if="$(eval adaptVideoParamsEnabled)">
+    <param name="debug" value="false"/>
+</node>
+
+<node name="BitrateConfigSend" type="OperatorBitrateConfigSend" pkg="tod_video" output="screen"
+    if="$(eval adaptVideoParamsEnabled)">
+    <param name="debug" value="false"/>
+</node>
+
+<node name="BitratePredictionReceiver" type="OperatorBitratePredictionReceiver" pkg="tod_video" output="screen"
+    if="$(eval adaptVideoParamsEnabled)"/>
+
+</group> <!--group: /Operator/Video-->
+
+</launch>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="adaptVideoParamsEnabled" default="true"/>
+<arg name="operatorImageOutputFormat" default="i420"/> <!--i420, rgb8, yuv422, bgr8, bgra8, mono8-->
+
+<include file="$(find tod_video)/launch/tod_video_vehicle.launch">
+    <arg name="adaptVideoParamsEnabled" value="$(arg adaptVideoParamsEnabled)"/>
+</include>
+
+<include file="$(find tod_video)/launch/tod_video_operator.launch">
+    <arg name="adaptVideoParamsEnabled" value="$(arg adaptVideoParamsEnabled)"/>
+    <arg name="imageOutputFormat" value="$(arg operatorImageOutputFormat)"/>
+</include>
+
+</launch>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="Operator/Lidar">
+        <node name="LaserScansReceiver" pkg="tod_lidar" type="LaserScansReceiver" output="screen"/>
+        <node name="ObjectListsReceiver" pkg="tod_lidar" type="ObjectListsReceiver" output="screen"/>
+        <group ns="laser">
+            <node name="ObjectListViz" pkg="tod_helper" type="ObjectListViz" output="screen"/>
+        </group>
+    </group>
+</launch>
