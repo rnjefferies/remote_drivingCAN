@@ -20,3 +20,6 @@ wsp/.vscode/
 
 wsp/src/build/
 
+teleoperated_driving/.vscode/
+
+teleoperated_driving/doc/
