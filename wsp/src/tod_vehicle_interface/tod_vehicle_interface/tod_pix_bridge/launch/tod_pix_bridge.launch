@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+    <group ns="/Vehicle/VehicleBridge">
+        <node name="VehicleDataFromCan" pkg="tod_pix_bridge" type="VehicleDataFromCan" output="screen"/>
+        <node name="ControlCmdToCan" pkg="tod_pix_bridge" type="ControlCmdToCan"/>
+    </group>
+</launch>

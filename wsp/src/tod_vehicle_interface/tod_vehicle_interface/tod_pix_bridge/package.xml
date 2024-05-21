@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>tod_pix_bridge</name> <!-- Updated package name -->
+    <version>1.0.0</version>
+    <description>The tod_pix_bridge package</description>
+
+    <maintainer email="florian.sauerbeck@tum.de">Florian Sauerbeck</maintainer>
+
+    <license>LGPLv3</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <!-- Updated and possibly added dependencies -->
+    <build_depend>roscpp</build_depend>
+    <build_depend>sensor_msgs</build_depend>
+    <build_depend>nav_msgs</build_depend>
+    <build_depend>can_msgs</build_depend> <!-- Assuming can_msgs is needed -->
+    <build_depend>tod_msgs</build_depend>
+    <build_depend>socketcan_interface</build_depend>
+    <build_depend>std_msgs</build_depend>
+
+    <build_export_depend>roscpp</build_export_depend>
+    <build_export_depend>sensor_msgs</build_export_depend>
+    <build_export_depend>nav_msgs</build_export_depend>
+    <build_export_depend>can_msgs</build_export_depend>
+    <build_export_depend>tod_msgs</build_export_depend>
+    <build_export_depend>std_msgs</build_export_depend>
+
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>sensor_msgs</exec_depend>
+    <exec_depend>nav_msgs</exec_depend>
+    <exec_depend>can_msgs</exec_depend> <!-- Assuming can_msgs is needed for execution -->
+    <exec_depend>tod_msgs</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+    <exec_depend>socketcan_interface</exec_depend>
+
+    <!-- The export tag remains empty as before -->
+    <export></export>
+</package>
