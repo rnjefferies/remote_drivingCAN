@@ -1,0 +1,26 @@
+CameraTopViewFront:
+  TransformComponent:
+    Translation: [0, 0, 0]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 0
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 15
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472
+CameraFrontCenter:
+  TransformComponent:
+    Translation: [0, 0, 0]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 0
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 15
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="vehicleID" default="lgsvl"/>
+<param name="/vehicleID" value="$(arg vehicleID)"/>
+
+<include file="$(find tod_transform)/launch/tod_transform.launch">
+    <arg name="isVehicle" value="false"/>
+    <arg name="isOperator" value="true"/>
+</include>
+
+<group ns="/Operator/Visual">
+    <node pkg="tod_visual" name="tod_visual" type="Interface" output="screen">
+        <remap from="primary_control_cmd" to="/Operator/CommandCreation/primary_control_cmd"/>
+        <remap from="secondary_control_cmd" to="/Operator/CommandCreation/secondary_control_cmd"/>
+    </node>
+</group>
+
+<node pkg="rosbag" type="play" name="player" args="-d 10 -l -r 1.0
+    /home/$(env USER)/Documents/ToD_Playback/$(arg vehicleID)-for-visual.bag"/>
+
+</launch>

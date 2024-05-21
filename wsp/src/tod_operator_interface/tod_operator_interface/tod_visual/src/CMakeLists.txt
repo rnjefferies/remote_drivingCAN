@@ -1,0 +1,10 @@
+add_subdirectory(tofGL)
+add_subdirectory(TodStandardEntities)
+
+add_executable(Interface Interface.cpp InterfaceNode.cpp)
+set_target_properties(Interface PROPERTIES CXX_EXTENSIONS OFF)
+target_include_directories(Interface PUBLIC ${catkin_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR})
+add_dependencies(Interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(Interface PUBLIC TodStandardEntities tofGL ${catkin_LIBRARIES})
+target_compile_features(Interface PUBLIC cxx_std_17)
+install(TARGETS Interface RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

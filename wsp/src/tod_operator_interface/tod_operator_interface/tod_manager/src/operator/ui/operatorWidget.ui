@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OperatorManagerWidget</class>
+ <widget class="QMainWindow" name="OperatorManagerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>814</width>
+    <height>578</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OperatorManager3Widget</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="3">
+     <widget class="QLabel" name="Label_OperatorState">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>OPERATOR STATE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4" colspan="2">
+     <widget class="QLabel" name="Label_VehicleState">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>VEHICLE STATE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="Label_LastTXOperator">
+      <property name="text">
+       <string>Last MQTT TX</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QLineEdit" name="LineEdit_LastTXOperator"/>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLabel" name="Label_LastTXVehicle">
+      <property name="text">
+       <string>Last MQTT TX</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QLineEdit" name="LineEdit_LastTXVehicle"/>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="Label_IpAddressBroker">
+      <property name="text">
+       <string>IP Address Broker</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="Label_IpAddressOperator">
+      <property name="text">
+       <string>IP Address Operator</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QComboBox" name="ComboBox_IpAddressBroker">
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QComboBox" name="ComboBox_IpAddressOperator">
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QLabel" name="Label_GPSFix">
+      <property name="text">
+       <string>gps/fix [hz]</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <widget class="QLineEdit" name="LineEdit_GPSFix"/>
+    </item>
+    <item row="4" column="0" rowspan="2" colspan="3">
+     <widget class="QPushButton" name="PushButton_Connect">
+      <property name="text">
+       <string>Connect</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QLabel" name="Label_Odometry">
+      <property name="text">
+       <string>odometry  [hz]</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QLineEdit" name="LineEdit_Odometry"/>
+    </item>
+    <item row="5" column="4">
+     <widget class="QLabel" name="Label_Nav_Status">
+      <property name="text">
+       <string>nav_status</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="5" rowspan="2">
+     <widget class="QLineEdit" name="LineEdit_Nav_Status"/>
+    </item>
+    <item row="6" column="0" rowspan="2">
+     <widget class="QLabel" name="Label_ControlMode">
+      <property name="text">
+       <string>Control Mode</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="4" rowspan="2">
+     <widget class="QLabel" name="Label_Pos_Type">
+      <property name="text">
+       <string>pos_type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="5" rowspan="2">
+     <widget class="QLineEdit" name="LineEdit_Pos_Type"/>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QPushButton" name="PushButton_DirectControl">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(154,205,50)</string>
+      </property>
+      <property name="text">
+       <string>Direct Control</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
+     <widget class="QPushButton" name="PushButton_WayPointControl">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Waypoint Control</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="3">
+     <widget class="QPushButton" name="PushButton_ObjectModification">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Perc Modification</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0" colspan="2">
+     <widget class="QPushButton" name="PushButton_SharedControl">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Shared Control</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QPushButton" name="PushButton_PathGuidance">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Path Guidance</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QPushButton" name="PushButton_SafeCorridorControl">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Safe Corridor</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="Label_InputDevice">
+      <property name="text">
+       <string>Input Device</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0" colspan="2">
+     <widget class="QPushButton" name="PushButton_BrowseAndOk">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Browse And Ok</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0" colspan="6">
+     <widget class="QLineEdit" name="LineEdit_PathToInputDevice"/>
+    </item>
+    <item row="13" column="0" colspan="2">
+     <widget class="QLabel" name="Label_VideoRateMode">
+      <property name="text">
+       <string>Video Rate Mode</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="0" colspan="2">
+     <widget class="QPushButton" name="PushButton_VideoRate_Single">
+      <property name="maximumSize">
+       <size>
+        <width>141</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(154,205,50)</string>
+      </property>
+      <property name="text">
+       <string>Single</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="2">
+     <widget class="QPushButton" name="PushButton_VideoRate_Collective">
+      <property name="maximumSize">
+       <size>
+        <width>141</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Collective</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="3">
+     <widget class="QPushButton" name="PushButton_VideoRate_PQOS">
+      <property name="maximumSize">
+       <size>
+        <width>141</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>PQOS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="0" colspan="3">
+     <widget class="QPushButton" name="PushButton_Start">
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="4" rowspan="2" colspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="Label_EmergencyBreakReleased">
+        <property name="text">
+         <string>Emergency Break Released</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Label_LongReleased">
+        <property name="text">
+         <string>Long Released</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Label_LatReleased">
+        <property name="text">
+         <string>Lat Released</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="16" column="0" colspan="2">
+     <widget class="QPushButton" name="PushButton_Stop">
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="2">
+     <widget class="QPushButton" name="PushButton_Disconnect">
+      <property name="text">
+       <string>Disconnect</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>814</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

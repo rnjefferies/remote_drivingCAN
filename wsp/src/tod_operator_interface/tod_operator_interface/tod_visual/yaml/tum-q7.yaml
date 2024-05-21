@@ -1,0 +1,91 @@
+CameraTopViewRear:
+  TransformComponent:
+    Translation: [0, 0, 0.01]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 2
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 10
+    SphereLongitudeMin: 0
+    SphereLongitudeMax: 6.2830
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 0.6
+CameraTopViewRight:
+  TransformComponent:
+    Translation: [0, 0, 0.02]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 3
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 5.0
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472
+CameraTopViewFront:
+  TransformComponent:
+    Translation: [0, 0, 0.01]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 3
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 5.0
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472
+CameraTopViewLeft:
+  TransformComponent:
+    Translation: [0, 0, 0.02]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 3
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 5.0
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472
+CameraFrontRight:
+  TransformComponent:
+    Translation: [0, 0, 0.01]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 2
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 25
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472
+CameraFrontCenter:
+  TransformComponent:
+    Translation: [0, 0, 0.005]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 2
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 24.95
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472
+CameraFrontLeft:
+  TransformComponent:
+    Translation: [0, 0, 0.01]
+    Rotation: [0, 0, 0]
+    Scale: [1, 1, 1]
+  VideoComponent:
+    ProjectionMode: 2
+    GroundPlaneRadiusMin: 0.01
+    SphereRadius: 25
+    SphereLongitudeMin: -3.1415
+    SphereLongitudeMax: 3.1415
+    SphereLatitudeMin: -1.5708
+    SphereLatitudeMax: 1.0472

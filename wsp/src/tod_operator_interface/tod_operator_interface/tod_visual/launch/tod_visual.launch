@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+<group ns="/Operator/Visual">
+    <node pkg="tod_visual" name="tod_visual" type="Interface" output="screen">
+        <remap from="primary_control_cmd" to="/Operator/CommandCreation/primary_control_cmd"/>
+        <remap from="secondary_control_cmd" to="/Operator/CommandCreation/secondary_control_cmd"/>
+    </node>
+</group>
+
+</launch>
