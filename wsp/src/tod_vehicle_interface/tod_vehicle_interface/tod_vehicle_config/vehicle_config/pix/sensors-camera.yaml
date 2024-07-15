@@ -21,16 +21,12 @@
 
 
 camera0:
-  name: /CameraFrontCenter
+  name: /front
   is_fisheye: false
-  stream_on_connect: true
-  project_on: true
-  scalings: [0p500, 1p000]
-  transition_bitrates: [5000, 10000]
+  project_on: false
+  scalings: [0p250, 0p500, 1p000]
+  transition_bitrates: [300, 650, 6000]
 
-camera1:
-  name: /CameraTopViewFront
-  is_fisheye: true
+camera_topics_namespace: /Real/Sense
+camera_image_name: /color/image_raw
 
-camera_topics_namespace: /Vehicle/Video
-camera_image_name: /image_raw

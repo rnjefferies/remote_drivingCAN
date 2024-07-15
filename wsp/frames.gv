@@ -1,0 +1,9 @@
+digraph G {
+"base_footprint" -> "LidarFront"[label="Broadcaster: /Operator/Transform/CommonTransformTreePublisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1718812615.869 sec old)\nBuffer length: 0.000 sec\n"];
+"LidarFront" -> "CameraFrontCenter"[label="Broadcaster: /Operator/Transform/CommonTransformTreePublisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1718812615.869 sec old)\nBuffer length: 0.000 sec\n"];
+"CameraFrontCenter" -> "LidarTop"[label="Broadcaster: /Operator/Transform/CommonTransformTreePublisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1718812615.869 sec old)\nBuffer length: 0.000 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1718812615.869"[ shape=plaintext ] ;
+ }->"base_footprint";
+}

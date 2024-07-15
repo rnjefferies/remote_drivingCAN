@@ -13,17 +13,17 @@
 
     <!-- Perception -->
     <arg name="launchVideo" default="true"/>
-    <arg name="launchLidar" default="true"/>
-    <arg name="launchProjection" default="true"/>
+    <arg name="launchLidar" default="false"/>
+    <arg name="launchProjection" default="false"/>
 
     <!-- Control -->
     <arg name="launchDirectControl" default="true"/>
-    <arg name="launchSafeCorridorControl" default="true"/>
-    <arg name="launchSharedControl" default="true"/>
+    <arg name="launchSafeCorridorControl" default="false"/>
+    <arg name="launchSharedControl" default="false"/>
 
     <!-- Common -->
     <arg name="launchMultiplot" default="false"/>
-    <arg name="launchLogging" default="false"/>
+    <arg name="launchLogging" default="true"/>
 
     <include file="$(find tod_launch)/launch/operator/operator_vehicle_interface.launch">
         <arg name="launchVehicleBridge" value="$(arg launchVehicleBridge)"/>

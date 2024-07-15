@@ -144,7 +144,7 @@ int main(int argc, char** argv) {
     ros::NodeHandle nh;
 
     // Initialize CAN communication and set up subscribers.
-    initSocketCAN("vcan0");
+    initSocketCAN("can0");
 
     ros::Subscriber primaryCmdSub = nh.subscribe("/Vehicle/VehicleBridge/primary_control_cmd", 10, primaryCmdCallback);
     ros::Subscriber secondaryCmdSub = nh.subscribe("/Vehicle/CommandCreation/secondary_control_cmd", 10, secondaryCmdCallback);

@@ -5,7 +5,7 @@
 namespace tod_network {
 
 static const int RX_MQTT = 1883; // same for operator and vehicle
-static const std::string AutoboxIp = "192.168.140.6";
+static const std::string AutoboxIp = "192.168.1.2";
 
 enum VehiclePorts { // only what is sent via udp
     RX_PRIMARYCONTROL_COMMAND = 70000,
